@@ -1,27 +1,5 @@
-// $.getJSON("topspots.json"), function(result){
-// 	debugger;
-
-// }
-
-// console.log("Hello")
-
 $(document).ready(function() {
-
-    //get the JSON file and load the data into memory
-
-
-    //name the function result
-    // $.getJSON("topspots.json", function(result) {
-    // 	console.log('loaded');
-    // 	$.each(result.)
-
-    // });
-
-
-    $.getJSON("topspots.json", function(result) {
-
-        //index is position
-        //values is name, descriptions, location
+     $.getJSON("topspots.json", function(result) {
         $(result).each(function(index, value) {
             var string = ""
             var maplink = "https://www.google.com/maps?q="
@@ -33,7 +11,6 @@ $(document).ready(function() {
             tr.append("<td>" + value.description + "</td>");
             tr.append("<td>" + "<a class='btn btn-default btn-md btn-primary' target='_blank' href='" + maplink + "'>" + "Map" + "</a>" + "</td>");
             $('table').append(tr);
-
-        })
-    })
+        });
+    });
 });
